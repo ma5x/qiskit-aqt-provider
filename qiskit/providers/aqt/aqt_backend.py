@@ -46,8 +46,6 @@ class AQTSimulator(BaseBackend):
                 }
             ]
         }
-
-        # We will explain about the provider in the next section
         super().__init__(
             configuration=BackendConfiguration.from_dict(configuration),
             provider=provider)
@@ -94,7 +92,6 @@ class AQTDevice(BaseBackend):
                 }
             ]
         }
-        # We will explain about the provider in the next section
         super().__init__(
             configuration=BackendConfiguration.from_dict(configuration),
             provider=provider)
