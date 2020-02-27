@@ -51,7 +51,6 @@ def _experiment_to_seq(experiment):
         elif name == 'R':
             mixing_angle = inst.params[1] / pi
             ops.append((name, float(exponent), float(mixing_angle), inst.qubits))
-            print(name, exponent, mixing_angle, inst.qubits)
         else:
             # (op name, exponent, [qubit index])
             ops.append((name, float(exponent), inst.qubits))

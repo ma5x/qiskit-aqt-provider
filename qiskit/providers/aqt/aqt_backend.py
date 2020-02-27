@@ -23,7 +23,11 @@ from . import qobj_to_aqt
 class AQTSimulator(BaseBackend):
 
     def __init__(self, provider):
+
+        # CAUTION: updated gate set not yet available in public simulator
+
         self.url = "https://gateway.aqt.eu/marmot/sim/"
+        # self.url = "http://127.0.0.1:8000/v0/simulate/no-noise"
         configuration = {
             'backend_name': 'aqt_qasm_simulator',
             'backend_version': '0.0.1',
@@ -32,7 +36,7 @@ class AQTSimulator(BaseBackend):
             'local': False,
             'coupling_map': None,
             'description': 'aqt trapped ion device simulator',
-            'basis_gates': ['rx', 'ry', 'rxx'],
+            'basis_gates': ['rx', 'ry', 'rz', 'r', 'rxx', 'ms'],
             'memory': False,
             'n_qubits': 11,
             'conditional': False,
@@ -81,7 +85,7 @@ class AQTDevice(BaseBackend):
             'local': False,
             'coupling_map': None,
             'description': 'aqt trapped ion device',
-            'basis_gates': ['rx', 'ry', 'rxx', 'ms'],
+            'basis_gates': ['rx', 'ry', 'rz', 'r', 'rxx', 'ms'],
             'memory': False,
             'n_qubits': 4,
             'conditional': False,
